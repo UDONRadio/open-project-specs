@@ -37,7 +37,7 @@ rudimentaire, a un nombre de fonctionnalites plutot limite.
 Ces features constituent le MVP d'UDONRadio. L'infrastructure sous-jacente n'est
 pas triviale pour autant:
 
-![Infrastructure block diagram](https://raw.githubusercontent.com/UDONRadio/UDONRadio/master/docs/block_diagram.svg)
+![Infrastructure block diagram](https://raw.githubusercontent.com/UDONRadio/open-project-specs/master/.github/block_diagram.svg)
 
 
 # Stack logicielle

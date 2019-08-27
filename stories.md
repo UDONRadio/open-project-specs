@@ -4,13 +4,14 @@ futures orientations de la direction artistique d'UDONRadio.
 
 # Types d'utilisateurs
 
-- Anonyme: n'importe quel visiteur qui n'est pas connecte a son compte
-- Membre: n'importe quel visiteur qui est connecte a son compte
-- Adherent: Membre qui a adhere a l'association
+- Anonyme: n'importe quel visiteur qui n'est pas connecte a son compte.
+- Membre: n'importe quel visiteur qui est connecte a son compte.
+- Adherent: Membre qui a adhere a l'association.
 - Moderateur: Adherent qui s'est porte volontaire pour la moderation
-  du chat
+  du chat.
+- Documentaliste: Adherent responsable d'un genre.
 - Animateur: Membre qui diffuse une emission en live ou en differe.
-- Admin: Nous
+- Admin: Nous.
 
 # Features
 
@@ -40,24 +41,30 @@ Planning spontane:
 - [Grande Tambouille](#grande tambouille)
 
 ### TODO Generation du planning automatique
+- definir l'API et les datas a propos d'un type de plage qui peut etre query par
+  l'algorithme.
 En debut de semaine, le programme de la semaine a venir est fractionne
 automatiquement en plages horaires. Chaque type de plage horaire peut influer
 sur l'algorithme qui determine la duree d'une plage, l'heure a laquelle une
-plage est difusee, etc...
+plage est difusee (l'algorithme calcule un poids pour chaque type de plage) etc.
 
-### TODO Plannification
+### Plannification
 Depuis le site, un Admin doit pouvoir:
 - changer le type de plage
 - regler la configuration du type de plage en question. Par exemple pour un
   genre, regler quel genre est diffuse.
-- ajuster l'heure de debut et de fin d'une plage. Dans le cas d'une plage sur le
-  planning auto, les plages adjacentes sont redimensionees en consequence. Dans
-  le cas du planning spontane, le chevauchement de plages horaires est interdit
-  et entraine l'affichage d'un message d'erreur.
+- ajuster l'heure de debut et de fin d'une plage si celle-ci est de duree
+  variable. Dans le cas d'une plage sur le planning auto, les plages adjacentes
+  sont redimensionees en consequence. Dans le cas du planning spontane, le
+  chevauchement de plages horaires est interdit et entraine l'affichage d'un
+  message d'erreur.
 - supprimer une plage horaire. Dans le cas du planning auto, la plage precedente
   s'etend alors a la fin de la plage supprimee.
 - ajouter une plage horaire. Dans le cas du planning auto, une plage horaire
   peut etre cree uniquement en divisant une plage horaire en deux.
+Il n'est pas question de pouvoir deleguer une partie du planning a un DJ par
+exemple, qui souhaiterait diffuser une playlist a la suite de son emission.
+Dans ce cas la, le DJ demande a l'admin de mettre lui meme sa playlist ensuite.
 
 ### Consultation
 - On doit pouvoir voir la plage courante et la plage a suivre sur la landing
@@ -73,10 +80,44 @@ Depuis le site, un Admin doit pouvoir:
 Le calendrier doit pouvoir etre requetable pour permettre l'integration de
 robots.
 
-## Genres
-  Mise  en  place  d’un  Slackbot
-  pour  prévenir  les  documentalistes  qu’il  y  a  une  ou  plusieurs 
-nouveautés dans leur groupe ? 
+
+## TODO Genres
+Les _genres_ sont des plages horaires similaires a une playlist classique, mais
+dont la playlist est generee automatiquement a partir des chansons qu'il
+contient. Chaque _genre_ est modere par un ou plusieurs _documentalistes_
+specifiques. Lorsqu'un _adherent_ lambda upload une chanson, il peut choisir a
+quel genre envoyer sa chanson. Les _documentalistes_ sont alors charges de
+tagger proprement la chanson si ils l'acceptent dans leur _genre_. Ils ont acces
+a la liste des chansons qui font partie de leur _genre_.
+
+### TODO Creation de genres
+### TODO LIQUIDSOAP
+### TODO Rejet d'une chanson
+### TODO Consultation de la discographie
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Services externes
+Mise en place d’un Slackbot pour prévenir les documentalistes qu’il y a une ou
+plusieurs nouveautés dans leur groupe
+
 ## Emissions
 ## Playlists
 ## Grande Tambouille

@@ -41,7 +41,7 @@ pas triviale pour autant:
 
 
 # Stack logicielle
-TODO
+La stack est composee d'une multitude de programmes, frameworks et libraries:
 
 ## Web frontend
 TODO
